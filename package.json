@@ -1,0 +1,35 @@
+{
+    "name": "TallyArbiterRelayController",
+    "version": "1.0.0",
+    "description": "Relay Controller for the Tally Arbiter project. Uses USB relays and listens to device state data from a Tally Arbiter server.",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser",
+        "tsl",
+        "tally",
+        "carbonite",
+        "graphhite",
+        "blackmagic",
+        "atem",
+        "ross",
+        "obs",
+        "vmix",
+        "blink1",
+        "roland"
+    ],
+    "license": "MIT",
+    "author": "Joseph Adams",
+    "dependencies": {
+        "@josephdadams/usbrelay": "^1.0.2",
+        "cli-color": "^2.0.0",
+        "express": "^4.17.1",
+        "jquery": "^3.5.1",
+        "socket.io": "^2.3.0"
+    },
+    "main": "index.js",
+    "scripts": {},
+    "devDependencies": {}
+}
