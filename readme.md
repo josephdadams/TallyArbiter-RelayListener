@@ -13,14 +13,19 @@ To contact the author or for more information, please visit [www.techministry.bl
 The software is written in Node.js and is therefore cross-platform and can be run on MacOS, Linux, or Windows.
 
 **RUNNING DIRECTLY WITHIN NODE:**
-1. Install `node` if not already installed. <https://nodejs.org/en/download/>
+1. Install Node.js if not already installed. <https://nodejs.org/en/download/>
+1. If installing on a Pi, run `sudo apt install libudev-dev libusb-1.0-0-dev`: The `libusb` library is necessary to communicate with the USB relay.
 1. Download the Tally Arbiter source code.
 1. Open a terminal window and change directory to the folder where you placed the source code.
+1. Type `npm install` to install all necessary libraries.
 1. Type `node index.js` within the this folder.
 1. If this folder does not contain the `config_relays.json` file, an error will occur. A sample configuration file is provided.
 
 **RUNNING AS A SERVICE:**
+1. Install Node.js if not already installed.
+1. If installing on a Pi, run * `sudo apt install libudev-dev libusb-1.0-0-dev`: The `libusb` library is necessary to communicate with the USB relay.
 1. Open a terminal window and change directory to the folder where you placed the source code.
+1. Type `npm install` to install all necessary libraries.
 1. Install the Node.js library, `pm2`, by typing `npm install -g pm2`. This will install it globally on your system.
 1. After `pm2` is installed, type `pm2 start index.js --name TallyArbiterRelayController` to daemonize it as a service.
 1. If you would like it to start automatically upon bootup, type `pm2 startup` and follow the instructions on-screen.
@@ -63,6 +68,8 @@ Example `relay_group` entry:
 	* `relayNumber`: The actual relay number on the relay board. (1-8)
 	* `busType`: Either `preview` or `program`.
 * `deviceId`: If configured, the Tally Arbiter Device Id. If this Device Id is invalid or the property does not exist in your config file, Tally Arbiter will automatically reassign this relay group to the first Device on the server. You can reassign it to a new Device using the Tally Arbiter interface.
+
+Each Relay Group will be represented as a listener client on the Tally Arbiter server.
 
 Once your configuration file is created and you've made the physical connections to your contact closure devices, start up the Tally Arbiter Relay Controller and it will attempt to connect to the Tally Arbiter Server.
 
