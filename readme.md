@@ -18,7 +18,7 @@ The software is written in Node.js and is therefore cross-platform and can be ru
 1. Download the Tally Arbiter source code.
 1. Open a terminal window and change directory to the folder where you placed the source code.
 1. Type `npm install` to install all necessary libraries.
-1. Type `node index.js` within the this folder.
+1. Type `node index.js` within the this folder. If you receive a permissions error, you may need to run the software as root, with `sudo node index.js`.
 1. If this folder does not contain the `config_relays.json` file, an error will occur. A sample configuration file is provided.
 
 **RUNNING AS A SERVICE:**
@@ -27,7 +27,7 @@ The software is written in Node.js and is therefore cross-platform and can be ru
 1. Open a terminal window and change directory to the folder where you placed the source code.
 1. Type `npm install` to install all necessary libraries.
 1. Install the Node.js library, `pm2`, by typing `npm install -g pm2`. This will install it globally on your system.
-1. After `pm2` is installed, type `pm2 start index.js --name TallyArbiterRelayController` to daemonize it as a service.
+1. After `pm2` is installed, type `pm2 start index.js --name TallyArbiterRelayController` to daemonize it as a service. If you receive a permissions error, you may need to run the software as root, with `sudo start index.js --name TallyArbiterRelayController`.
 1. If you would like it to start automatically upon bootup, type `pm2 startup` and follow the instructions on-screen.
 1. To view the console output while running the software with `pm2`, type `pm2 logs TallyArbiterRelayController`.
 
@@ -43,6 +43,14 @@ The USB library is designed to work with these types of relays:
 The `config_relays.json` file contains two sections:
 
 * `server_config`: The IP and Port of the Tally Arbiter server.
+```javascript
+ "server_config":
+ {
+	"ip": "192.168.11.141",
+	"port": 4455
+ }
+```
+
 * `relay_groups`: The groupings of relays that you want to control. Each Relay Group can be associated with one Tally Arbiter Device.
 
 Example `relay_group` entry:
