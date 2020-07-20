@@ -31,7 +31,7 @@
     {
      "relayNumber": 4,
      "busType": "program",
-     "state": true
+     "state": false
     }
    ],
    "deviceId": "ed34bacd"

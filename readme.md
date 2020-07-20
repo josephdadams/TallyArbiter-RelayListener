@@ -1,7 +1,7 @@
-# Tally Arbiter Relay Controller
-Tally Arbiter Relay Controller was written by Joseph Adams and is distributed under the MIT License.
+# Tally Arbiter Relay Listener
+Tally Arbiter Relay Listener was written by Joseph Adams and is distributed under the MIT License.
 
-Tally Arbiter Relay Controller is an accessory program that allows you to connect to a Tally Arbiter server and control USB relays based on the incoming tally information.
+Tally Arbiter Relay Listener is an accessory program that allows you to connect to a Tally Arbiter server and control USB relays based on the incoming tally information.
 
 To learn more about the Tally Arbiter project, [click here](http://github.com/josephdadams/tallyarbiter).
 
@@ -27,14 +27,14 @@ The software is written in Node.js and is therefore cross-platform and can be ru
 1. Open a terminal window and change directory to the folder where you placed the source code.
 1. Type `npm install` to install all necessary libraries.
 1. Install the Node.js library, `pm2`, by typing `npm install -g pm2`. This will install it globally on your system.
-1. After `pm2` is installed, type `pm2 start index.js --name TallyArbiterRelayController` to daemonize it as a service. If you receive a permissions error, you may need to run the software as root, with `sudo start index.js --name TallyArbiterRelayController`.
+1. After `pm2` is installed, type `pm2 start index.js --name TallyArbiterRelayListener` to daemonize it as a service. If you receive a permissions error, you may need to run the software as root, with `sudo start index.js --name TallyArbiterRelayListener`.
 1. If you would like it to start automatically upon bootup, type `pm2 startup` and follow the instructions on-screen.
-1. To view the console output while running the software with `pm2`, type `pm2 logs TallyArbiterRelayController`.
+1. To view the console output while running the software with `pm2`, type `pm2 logs TallyArbiterRelayListener`.
 
 Upon startup, the program will enumerate through the `config_relays.json` file and attempt to connect to the specified Tally Arbiter server.
 
 # Relay Hardware
-Tally Arbiter Relay Controller supports USB relays with up to 8 separate relays. If you need more relays, run the program on more devices. It is designed to run on a Raspberry Pi Zero for a low cost of entry.
+Tally Arbiter Relay Listener supports USB relays with up to 8 separate relays. If you need more relays, run the program on more devices. It is designed to run on a Raspberry Pi Zero for a low cost of entry.
 
 The USB library is designed to work with these types of relays:
 ![picture alt](https://github.com/josephdadams/USBRelay/raw/master/usbrelay.jpg "USB Relay")
@@ -79,7 +79,7 @@ Example `relay_group` entry:
 
 Each Relay Group will be represented as a listener client on the Tally Arbiter server.
 
-Once your configuration file is created and you've made the physical connections to your contact closure devices, start up the Tally Arbiter Relay Controller and it will attempt to connect to the Tally Arbiter Server.
+Once your configuration file is created and you've made the physical connections to your contact closure devices, start up the Tally Arbiter Relay Listener and it will attempt to connect to the Tally Arbiter Server.
 
 # Improvements and Suggestions
 I welcome all improvements and suggestions. You can submit issues and pull requests, or contact me through [my blog](http://www.techministry.blog).
