@@ -13,7 +13,7 @@ To contact the author or for more information, please visit [www.techministry.bl
 The software is written in Node.js and is therefore cross-platform and can be run on MacOS, Linux, or Windows.
 
 **RUNNING DIRECTLY WITHIN NODE:**
-1. Install Node.js if not already installed. <https://nodejs.org/en/download/>
+1. Install Node.js if not already installed. <https://nodejs.org/en/download/> If installing on a Windows PC, ensure that the option to install Tools for Native Modules is selected otherwise the installation of Tally Arbiter Relay Listener will fail.
 1. If installing on a Pi, run `sudo apt install libudev-dev libusb-1.0-0-dev`: The `libusb` library is necessary to communicate with the USB relay.
 1. Download the Tally Arbiter source code.
 1. Open a terminal window and change directory to the folder where you placed the source code.
@@ -22,7 +22,7 @@ The software is written in Node.js and is therefore cross-platform and can be ru
 1. If this folder does not contain the `config_relays.json` file, an error will occur. A sample configuration file is provided.
 
 **RUNNING AS A SERVICE:**
-1. Install Node.js if not already installed.
+1. Install Node.js if not already installed.  Again, if installing on a Windows PC, ensure that the option to install Tools for Native Modules is selected otherwise the installation of Tally Arbiter Relay Listener will fail.
 1. If installing on a Pi, run * `sudo apt install libudev-dev libusb-1.0-0-dev`: The `libusb` library is necessary to communicate with the USB relay.
 1. Open a terminal window and change directory to the folder where you placed the source code.
 1. Type `npm install` to install all necessary libraries.
