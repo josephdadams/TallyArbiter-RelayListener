@@ -1,6 +1,6 @@
 {
-    "name": "TallyArbiter-RelayListener",
-    "version": "1.0.0",
+    "name": "tallyarbiter-relaylistener",
+    "version": "1.0.1",
     "description": "Relay Listener for the Tally Arbiter project. Uses USB relays and listens to device state data from a Tally Arbiter server.",
     "keywords": [
         "util",
